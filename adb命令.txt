@@ -1,0 +1,33 @@
+查看设备命令
+  adb devices
+获取包名和界面名命令
+  adb shell dumpsys window | findstr mCurrentFocus
+获取到  mCurrentFocus=Window{5005193 u0 com.android.settings/com.android.settings.Settings}
+com.android.settings  包名    .Settings界面名
+
+上传命令
+  adb push 文件路径 目标路径
+下载命令
+  adb pull 文件路径 目标路径
+
+app启动时间
+  adb shell am start -W 包名/启动名
+获取手机日志
+  adb logcat
+
+获取手机分辨率
+  adb shell wm size
+获取手机型号
+  adb shell getprop ro.product
+启动adb
+  adb start-server
+关闭adb
+  adb kill-server
+
+获取手机ip
+  adb shell ifconfig
+连接手机
+  adb connect 手机ip:5555
+
+断开手机连接
+  adb disconnect 手机ip:5555
